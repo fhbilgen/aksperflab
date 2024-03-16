@@ -9,8 +9,8 @@ env:
     AZURE_CONTAINER_REGISTRY: aksperflabacr
     CLUSTER_NAME: aksperflab
     CLUSTER_RESOURCE_GROUP: aksperflab-rg
-    CONTAINER_NAME_WEBAPI: webAPI
-    CONTAINER_NAME_WEBAPP: webAPP
+    CONTAINER_NAME_WEBAPI: aksperflab-webapi
+    CONTAINER_NAME_WEBAPP: aksperflab-webapp
     DEPLOYMENT_MANIFEST_PATH: |
         manifests/deployment.yaml
         manifests/service.yaml
