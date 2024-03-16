@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autodeployment
+  labels:
+    app: autodeployment
+  namespace: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autodeployment
+  template:
+    metadata:
+      labels:
+        app: autodeployment
+    spec:
+      containers:
+        - name: autodeployment
+          image: aksperflabacr.azurecr.io/image-workflow-1710591809780:latest
+          ports:
+            - containerPort: 5000
