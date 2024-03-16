@@ -30,6 +30,8 @@ jobs:
                 tenant-id: ${{ secrets.AZURE_TENANT_ID }}
             - name: Build and push webAPI image to ACR
               run: az acr build --image ${{ env.CONTAINER_NAME_WEBAPI }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f webAPI/Dockerfile ./
+            - name: Build and push webAPP image to ACR
+              run: az acr build --image ${{ env.CONTAINER_NAME_WEBAPP }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f webAPP/Dockerfile ./  
     deploy:
         permissions:
             actions: read
