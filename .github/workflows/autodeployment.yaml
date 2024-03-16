@@ -9,7 +9,8 @@ env:
     AZURE_CONTAINER_REGISTRY: aksperflabacr
     CLUSTER_NAME: aksperflab
     CLUSTER_RESOURCE_GROUP: aksperflab-rg
-    CONTAINER_NAME: image-workflow-1710591809780
+    CONTAINER_NAME_WEBAPI: webAPI
+    CONTAINER_NAME_WEBAPP: webAPP
     DEPLOYMENT_MANIFEST_PATH: |
         manifests/deployment.yaml
         manifests/service.yaml
@@ -28,7 +29,7 @@ jobs:
                 subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
                 tenant-id: ${{ secrets.AZURE_TENANT_ID }}
             - name: Build and push webAPI image to ACR
-              run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f Dockerfile ./WebAPI/
+              run: az acr build --image ${{ env.CONTAINER_NAME }}:${{ github.sha }} --registry ${{ env.AZURE_CONTAINER_REGISTRY }} -g ${{ env.ACR_RESOURCE_GROUP }} -f WebAPI/Dockerfile WebAPI/
     deploy:
         permissions:
             actions: read
