@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: autodeployment
+  name: webapi-deploy
   labels:
-    app: autodeployment
+    app: webapi
   namespace: test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: autodeployment
+      app: webapi
   template:
     metadata:
       labels:
-        app: autodeployment
+        app: webapi
     spec:
       containers:
         - name: autodeployment
-          image: aksperflabacr.azurecr.io/image-workflow-1710591809780:latest
+          image: aksperflabacr.azurecr.io/aksperflab-webapi:latest
           ports:
             - containerPort: 5000
