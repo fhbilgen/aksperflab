@@ -28,13 +28,15 @@ namespace webAPP.Pages
                 using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
                 {
                     connection.Open();
-
+                    Console.WriteLine("Connected to SQL Server");
                     string sql = "SELECT name, callcode, trafficcode FROM dbo.cities";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
+                            Console.WriteLine("Reading data from table");
+                            Console.WriteLine($"{reader.RecordsAffected.ToString()} cities are retrieved");
                             while (reader.Read())
                             {
                                 var cname = reader["name"].ToString();
@@ -49,6 +51,7 @@ namespace webAPP.Pages
             }
             catch (SqlException e)
             {
+                Console.WriteLine(e.ToString());
                 return null;
             }
 
