@@ -16,6 +16,7 @@ env:
         manifests/webapi-deployment.yaml
         manifests/webapi-service.yaml
         manifests/webapp-service.yaml
+    DEPLOYMENT_NAMESPACE: perf
 jobs:
     buildImage:
         permissions:
@@ -67,4 +68,4 @@ jobs:
                 action: deploy
                 images: ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME_WEBAPI }}:${{ github.sha }} ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME_WEBAPP }}:${{ github.sha }}
                 manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
-                namespace: test
+                namespace: DEPLOYMENT_NAMESPACE

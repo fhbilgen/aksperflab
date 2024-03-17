@@ -20,3 +20,29 @@ spec:
           image: aksperflabacr.azurecr.io/aksperflab-webapp:latest
           ports:
             - containerPort: 5000
+          env:
+            - name: SQLSERVERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: webapp-secret
+                  key: SQLSERVERNAME
+            - name: SQLSERVERDBNAME
+              valueFrom:
+                secretKeyRef:
+                  name: webapp-secret
+                  key: SQLSERVERDBNAME
+            - name: SQLUSERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: webapp-secret
+                  key: SQLUSERNAME
+            - name: SQLPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: webapp-secret
+                  key: SQLPASSWORD
+            - name: WEBAPIURL
+              valueFrom:
+                secretKeyRef:
+                  name: webapp-secret
+                  key: WEBAPIURL
