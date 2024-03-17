@@ -16,7 +16,7 @@ spec:
         app: webapi
     spec:
       containers:
-        - name: autodeployment
+        - name: webapi
           image: aksperflabacr.azurecr.io/aksperflab-webapi:latest
           ports:
-            - containerPort: 5000
+            - containerPort: 8080

@@ -16,10 +16,10 @@ spec:
         app: webapp
     spec:
       containers:
-        - name: autodeployment
+        - name: webapp
           image: aksperflabacr.azurecr.io/aksperflab-webapp:latest
           ports:
-            - containerPort: 5000
+            - containerPort: 8080
           env:
             - name: SQLSERVERNAME
               valueFrom:

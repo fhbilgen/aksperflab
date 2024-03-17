@@ -12,6 +12,7 @@ namespace webAPP.Pages
         public IList<WeatherForecast>? Forecasts { get; set; }
         public void OnGet()
         {
+            gfcWrapper();
         }
 
 
