@@ -8,6 +8,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddApplicationInsightsTelemetry();
+builder.Services.AddServiceProfiler();
 
 var app = builder.Build();
 

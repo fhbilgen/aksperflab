@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webAPI", "webAPI\webAPI.csproj", "{7EE8ADAC-8D1F-44F1-B1CB-9991C9CC0B44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webAPI", "webAPI\webAPI.csproj", "{7EE8ADAC-8D1F-44F1-B1CB-9991C9CC0B44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webAPP", "webAPP\webAPP.csproj", "{9DAAAD7E-0C69-4329-A38A-F261B52A713B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webAPP", "webAPP\webAPP.csproj", "{9DAAAD7E-0C69-4329-A38A-F261B52A713B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

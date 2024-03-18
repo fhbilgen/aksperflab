@@ -7,7 +7,7 @@ namespace webAPP.Pages
     public class weather_forecastModel : PageModel
     {
         private static readonly HttpClient client = new HttpClient();
-        private static readonly string url = Environment.GetEnvironmentVariable("WEBAPIURL");
+        private static readonly string url = Environment.GetEnvironmentVariable("WEBAPIURL") + "weatherforecast";
         //"https://localhost:5001/WeatherForecast";
         public IList<WeatherForecast>? Forecasts { get; set; }
         public void OnGet()
