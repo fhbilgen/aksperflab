@@ -1,7 +1,11 @@
+using Microsoft.ApplicationInsights.Extensibility;
+using webAPP;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<ITelemetryInitializer, webAPPTeleInit>();
 builder.Services.AddApplicationInsightsTelemetry();
 builder.Services.AddServiceProfiler();
 
